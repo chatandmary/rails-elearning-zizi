@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AppName</title>
+    <title>Cannabis</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Handlee|Josefin+Slab|Julius+Sans+One|Poiret+One|Sigmar+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   </head>
-
+  <header>
+        <div class="hl container header-title">
+          <%= link_to("Cannabis", root_path , class:"eden")%>
+            <nav class="hr">
+              <ul class="list-inline">
+                <li class="list-inline-item"><a href="#" id="about">ABOUT</a></li>
+                <li class="list-inline-item"><a href="#" id="signup">SIGNUP</a></li>
+                <li class="list-inline-item"><a href="#" id="login">LOGIN</a></li>
+              </ul>
+            </nav>
+              <div class="clear"></div>
+        </div>
+        <div class="container top-container">
+          <div class="row top-row">
+            <div class="col-md-6 col-12 top-col-left order-2 order-md-1">
+                <h2 class="description">
+                Let's<br class="br-n">
+                Learning<br class="br-n">
+                About
+                Cannabis :)
+                </h2>
+                <div class="button">
+                <%= link_to('Member Registration', "#",class:"reg")%>
+                </div>
+                <div class="button sp-button">
+                <%= link_to('Member Login', "#",class:"log")%>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 align-self-center order-1 order-md-2">
+              <%= link_to image_tag("cannabis.png", alt: "Cannabis_logo",class:"cannabis"),
+            root_path %>
+            </div>
+          </div>
+        </div>
+    </header>
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

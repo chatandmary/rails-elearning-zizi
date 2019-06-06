@@ -1,0 +1,203 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/*---------------------------------------------------------------
+	Universal
+/*---------------------------------------------------------------*/
+
+h1, h2, h3, p,h4, h5, ul, ol, li, dl, dt, dd, form, figure, form {
+  margin: 0px;
+  padding: 0px;
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 2;
+}
+
+.clear {
+clear:both;
+}
+
+
+a {
+text-decoration: none;
+color: #fff;
+}
+
+a:hover {
+opacity:0.8;
+color:#fff;
+text-decoration: none;
+}
+
+img {
+max-width: 100%;
+height:auto;
+width:auto;
+max-height:100%;
+}
+
+
+li	{
+list-style: none;
+}
+
+* {
+box-sizing: border-box;
+}
+
+body {
+font-family:'Handlee','-apple-system','BlinkMacSystemFont','Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic','sans-serif';
+background-color:  #01805A;
+color: #fff;
+line-height: 0;
+font-size: 24px;
+}
+
+/*---------------------------------------------------------------
+	header
+/*---------------------------------------------------------------*/
+
+header {
+	height: 100vh;
+	background-color: #01805A;
+	padding: 50px 0;
+}
+
+.eden {
+	font-size:2rem;
+}
+
+.hl {
+  padding: 20px 0 40px 0;
+}
+
+.hr {
+	float: right;
+	font-size: 20px;
+	margin-top: -20px;
+}
+
+.hr li {
+	padding: 0px 10px
+}
+
+.btn {
+  margin-top: 30px;
+}
+
+.description {
+  font-size: 3.2rem;
+}
+
+.reg {
+  background-color: #DAB300;
+  padding: 30px 45px;
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.cannabis {
+  width: 80%;
+}
+
+.top-col-left {
+  padding-left: 100px;
+}
+
+.top-row {
+  padding-top: 40px;
+}
+
+.sp-button {
+  display: none;
+}
+
+/*---------------------------------------------------------------
+	スマホ
+/*---------------------------------------------------------------*/
+
+@media screen and (max-width:768px){
+  /* スマホ用CSS -------------- */
+  body{
+    font-size: 0.8rem;
+  }
+
+  /*---------------------------------------------------------------
+	header
+/*---------------------------------------------------------------*/
+
+header {
+	height: 100%;
+	background-color: #01805A;
+	padding: 50px 0;
+}
+
+.eden {
+  font-size:3rem;
+  display: block;
+  text-align: center;
+}
+
+.hl {
+  padding: 20px 0 40px 0;
+}
+
+.hr {
+	display: none;
+}
+
+.btn {
+  margin-top: 30px;
+}
+
+.description {
+  font-size: 1.0rem;
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.reg {
+  padding:25px 35px;
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.cannabis {
+  width: 100%;
+}
+
+.top-col-left {
+  padding-left: 15px;
+}
+
+.top-row {
+  padding-top: 20px;
+}
+
+.br-n {
+  display: none;
+}
+
+.button {
+  text-align: center;
+}
+
+.sp-button {
+  display: block;
+}
+
+.log {
+  padding:25px 55px;
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid #fff;
+}
+
+}
