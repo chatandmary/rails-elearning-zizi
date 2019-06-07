@@ -58,13 +58,12 @@ font-size: 24px;
 /*---------------------------------------------------------------*/
 
 header {
-	height: 100vh;
 	background-color: #01805A;
-	padding: 50px 0;
+	padding: 50px 0 30px 0;
 }
 
 .eden {
-	font-size:2rem;
+	font-size:3rem;
 }
 
 .hl {
@@ -114,6 +113,47 @@ header {
   display: none;
 }
 
+.copyright {
+  text-align: right;
+  position: relative;
+  bottom:-60px;
+  font-size: 1rem;
+}
+
+/*---------------------------------------------------------------
+	About
+/*---------------------------------------------------------------*/
+
+.about-img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 2rem;
+  border: 1px solid #fff;
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 30px 0 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*---------------------------------------------------------------
 	スマホ
 /*---------------------------------------------------------------*/
@@ -131,7 +171,7 @@ header {
 header {
 	height: 100%;
 	background-color: #01805A;
-	padding: 50px 0;
+	padding: 50px 0 0 0;
 }
 
 .eden {
@@ -141,7 +181,7 @@ header {
 }
 
 .hl {
-  padding: 20px 0 40px 0;
+  padding: 20px 0 20px 0;
 }
 
 .hr {
@@ -198,6 +238,35 @@ header {
   text-align: center;
   border-radius: 15px;
   border: 1px solid #fff;
+}
+
+.copyright {
+  text-align: center;
+  position: relative;
+  bottom: -40px;
+
+}
+
+/*---------------------------------------------------------------
+	About
+/*---------------------------------------------------------------*/
+
+.about-img {
+  height: 200px;
+  margin-top: 40px;
+}
+
+.title {
+  font-size: 1rem;
+  border: 1px solid #fff;
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 30px 0 20px 0;
+}
+
+.detail {
+  text-align: center;
+  font-size: 1.0rem;
 }
 
 }
