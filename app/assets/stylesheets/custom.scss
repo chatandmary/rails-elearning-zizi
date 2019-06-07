@@ -14,43 +14,43 @@ h1, h2, h3, p,h4, h5, ul, ol, li, dl, dt, dd, form, figure, form {
 }
 
 .clear {
-clear:both;
+  clear:both;
 }
 
 
 a {
-text-decoration: none;
-color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 a:hover {
-opacity:0.8;
-color:#fff;
-text-decoration: none;
+  opacity:0.8;
+  color:#fff;
+  text-decoration: none;
 }
 
 img {
-max-width: 100%;
-height:auto;
-width:auto;
-max-height:100%;
+  max-width: 100%;
+  height:auto;
+  width:auto;
+  max-height:100%;
 }
 
 
 li	{
-list-style: none;
+  list-style: none;
 }
 
 * {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-font-family:'Handlee','-apple-system','BlinkMacSystemFont','Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic','sans-serif';
-background-color:  #01805A;
-color: #fff;
-line-height: 0;
-font-size: 24px;
+  font-family:'Handlee','-apple-system','BlinkMacSystemFont','Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic','sans-serif';
+  background-color:  #01805A;
+  color: #fff;
+  line-height: 0;
+  font-size: 24px;
 }
 
 /*---------------------------------------------------------------
@@ -155,16 +155,16 @@ header {
 
 
 /*---------------------------------------------------------------
-	スマホ
+	Smart phone
 /*---------------------------------------------------------------*/
 
 @media screen and (max-width:768px){
-  /* スマホ用CSS -------------- */
+
   body{
     font-size: 0.8rem;
   }
 
-  /*---------------------------------------------------------------
+/*---------------------------------------------------------------
 	header
 /*---------------------------------------------------------------*/
 
