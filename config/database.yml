@@ -7,7 +7,7 @@ default: &default
   host: <%= ENV['DB_HOST'] %>
 development:
   <<: *default
-  database: rails-elearning-zizi-development
+  database: app_name_development
 test:
   <<: *default
   database: app_name_test
