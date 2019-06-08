@@ -6,11 +6,16 @@ class UsersController < ApplicationController
   def create 
     @user = User.new(user_params)
       if @user.save
-        flash[:warning] = "Created your account!!"
-        redirect_to root_url
+        log_in @user
+        flash[:primary] = "Created your account!!"
+        redirect_to @user
       else
         render "new"
       end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private 
