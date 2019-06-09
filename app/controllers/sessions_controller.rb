@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     #ユーザーがデータベースにあり、かつ、認証に成功した場合にのみ
     if user && user.authenticate(params[:session][:password])
-    log_in(user)
-    redirect_to user
+      log_in(user)
+      redirect_to user
     else
       flash.now[:warning] = "Invalid Credentials"
       render "new"
