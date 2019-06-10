@@ -3,9 +3,16 @@
     <%= link_to("Cannabis", root_path , class:"eden")%>
       <nav class="hr">
         <ul class="list-inline">
-          <li class="list-inline-item"><%= link_to "ABOUT", about_path, id:"about" %></li>
-          <li class="list-inline-item"><%= link_to "SIGNUP", signup_path, id:"signup" %></li>
-          <li class="list-inline-item"><%= link_to "LOGIN", "#", id:"login" %></li>
+          <% if logged_in? %>
+            <li class="list-inline-item"><%= link_to "LESSONS", "#", id:"lessons" %></li>
+            <li class="list-inline-item"><%= link_to "PROFILE", current_user, id:"profile" %></li>
+            <li class="list-inline-item"><%= link_to "SETTINGS", "#", id:"settings" %></li>
+            <li class="list-inline-item"><%= link_to "LOGOUT", logout_path,method: :delete, data: { confirm: 'Are you sure?' },id:"logout" %></li>
+            <% else %>
+            <li class="list-inline-item"><%= link_to "ABOUT", about_path, id:"about" %></li>
+            <li class="list-inline-item"><%= link_to "SIGNUP", signup_path, id:"signup" %></li>
+            <li class="list-inline-item"><%= link_to "LOGIN", login_path, id:"login" %></li>
+          <% end %>
         </ul>
       </nav>
         <div class="clear"></div>

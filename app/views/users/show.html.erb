@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="user-info text-center">
+      <%= gravatar_for @user %>
+      <h2 class="border-bottom"><%= @user.name %></h2>
+      <ul class="f-list">
+        <li class="#">Following</li>
+        <li class="#">Followers</li>
+      </ul>
+      <button class="btn btn-cannabis">Follow</button>
+      <%= link_to "Learned 20 words", "#", class:"learned" %>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="activity border">
+      <p class="ac-title">Activity</p>
+      <ul class="ac-list list-inline">
+        <li class="list-inline-item">
+        <%= gravatar_for @user %>Kiki learned 20 of 20 words Basic 500
+        </li>
+        <li class="list-inline-item">
+        <%= gravatar_for @user %>Kiki learned 20 of 20 words Basic 500
+        </li>
+        <li class="list-inline-item">
+        <%= gravatar_for @user %>Kiki learned 20 of 20 words Basic 500
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
