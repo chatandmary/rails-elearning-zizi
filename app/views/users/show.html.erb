@@ -4,10 +4,10 @@
       <%= gravatar_for @user %>
       <h2 class="border-bottom"><%= @user.name %></h2>
       <ul class="f-list">
-        <li class="#">Following</li>
-        <li class="#">Followers</li>
+        <li class="li-count"><%= link_to "#{@user.following.count} Following",following_user_path(@user) %></li>
+        <li class="li-count"><%= link_to "#{@user.follower.count} Follower",followers_user_path(@user) %></li>
       </ul>
-      <button class="btn btn-cannabis">Follow</button>
+      <%= render "follow_form" if logged_in? %>
       <%= link_to "Learned 20 words", "#", class:"learned" %>
     </div>
   </div>

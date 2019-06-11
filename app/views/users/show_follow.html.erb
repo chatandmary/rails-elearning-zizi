@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="user-info text-center">
+      <%= gravatar_for @user %>
+      <h2 class="border-bottom"><%= @user.name %></h2>
+      <ul class="f-list">
+        <li class="li-count"><%= link_to "#{@user.following.count} Following",following_user_path(@user) %></li>
+        <li class="li-count"><%= link_to "#{@user.follower.count} Follower",followers_user_path(@user) %></li>
+      </ul>
+      <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <%= link_to gravatar_for(user, size: 30), user %>
+          <% end %>
+        </div>
+      <% end %>
+      <%= link_to "Learned 20 words", "#", class:"learned" %>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="activity border">
+      <p class="ac-title"><%= @title %></p>
+      <% if @users.any? %>
+        <ul class="ac-list list-inline">
+          <% @users.each do |user|%>
+            <li class="list-inline-item">
+            <%= link_to gravatar_for(user), user %><br>
+            <%= user.name%>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+</div>
+
+
+
