@@ -9,8 +9,10 @@
               <%= link_to gravatar_for(user, size: 80), user %>
               <div class="media-body ml-3">
                 <h5><%= link_to user.name, user%>
+                <% if current_user.admin?%>
                 <%= link_to "Delete", user, method: :delete,
                                   data: { confirm: "You sure?" },class:"delete" %>
+                <%end%>
                 </h5>
               </div>
             </div>

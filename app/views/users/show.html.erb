@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-4">
     <div class="user-info text-center">
-      <%= gravatar_for @user %>
+      <%= link_to gravatar_for @user %>
       <h2 class="border-bottom"><%= @user.name %></h2>
       <ul class="f-list">
         <li class="li-count"><%= link_to "#{@user.following.count} Following",following_user_path(@user) %></li>
