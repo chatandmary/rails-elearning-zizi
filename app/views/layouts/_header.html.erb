@@ -4,6 +4,7 @@
       <nav class="hr">
         <ul class="list-inline">
           <% if logged_in? %>
+            <li class="list-inline-item"><%= link_to "USERS", users_path %></li>
             <li class="list-inline-item"><%= link_to "LESSONS", "#", id:"lessons" %></li>
             <li class="list-inline-item"><%= link_to "PROFILE", current_user, id:"profile" %></li>
             <li class="list-inline-item"><%= link_to "SETTINGS", "#", id:"settings" %></li>

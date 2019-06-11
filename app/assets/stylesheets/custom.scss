@@ -244,6 +244,71 @@ label {
 }
 
 
+/*---------------------------------------------------------------
+	Users index
+/*---------------------------------------------------------------*/
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #fff;
+  }
+}
+
+.pagi {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.user-all {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+
+.page-link {
+  background-color:transparent!important;
+  color: #ffffff!important;
+}
+
+.page-item.active {
+  background-color: #ffffff!important;
+}
+
+.page-item.active span {
+  color:#01805A!important;
+  border-color: #ffffff!important;
+}
+
+.media {
+  margin-bottom: 1rem;
+  border: 1px solid #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
