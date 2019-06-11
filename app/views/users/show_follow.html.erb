@@ -3,7 +3,10 @@
     <div class="user-info text-center">
       <%= gravatar_for @user %>
       <h2 class="border-bottom"><%= @user.name %></h2>
-      <%= render "follow_form" if logged_in? %>
+      <ul class="f-list">
+        <li class="li-count"><%= link_to "#{@user.following.count} Following",following_user_path(@user) %></li>
+        <li class="li-count"><%= link_to "#{@user.follower.count} Follower",followers_user_path(@user) %></li>
+      </ul>
       <% if @users.any? %>
         <div class="user_avatars">
           <% @users.each do |user| %>
