@@ -7,7 +7,7 @@
             <li class="list-inline-item"><%= link_to "USERS", users_path %></li>
             <li class="list-inline-item"><%= link_to "LESSONS", "#", id:"lessons" %></li>
             <li class="list-inline-item"><%= link_to "PROFILE", current_user, id:"profile" %></li>
-            <li class="list-inline-item"><%= link_to "SETTINGS", "#", id:"settings" %></li>
+            <li class="list-inline-item"><%= link_to "SETTINGS", edit_user_path(current_user), id:"settings" %></li>
             <li class="list-inline-item"><%= link_to "LOGOUT", logout_path,method: :delete, data: { confirm: 'Are you sure?' },id:"logout" %></li>
             <% else %>
             <li class="list-inline-item"><%= link_to "ABOUT", about_path, id:"about" %></li>
