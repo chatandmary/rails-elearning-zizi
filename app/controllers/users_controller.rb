@@ -47,6 +47,10 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def top
+    @user = User.find_by(id:params[:id])
+  end
+
   def following
     @title = "Following"
     @user  = User.find(params[:id])
