@@ -41,7 +41,6 @@ class Admin::CategoriesController < Admin::ApplicationController
       @category = Category.find(params[:id])
       @category.delete
       flash[:success] = "Deleted category!!"
-      @category = nil
       redirect_to admin_categories_url
     end
   
