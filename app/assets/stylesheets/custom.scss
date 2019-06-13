@@ -72,7 +72,7 @@ header {
 
 .hr {
 	float: right;
-	font-size: 20px;
+	font-size: 1rem;
 	margin-top: -20px;
 }
 
@@ -192,7 +192,7 @@ label {
 }
 
 .learned {
-  display: block;
+  display: inline-block;
   margin-top: 30px;
   font-size: 1rem;
 }
@@ -300,11 +300,37 @@ label {
   padding: 0rem 1rem;
 }
 
+/*---------------------------------------------------------------
+	Category
+/*---------------------------------------------------------------*/
 
+.cate-h1 {
+  font-size: 2rem;
+  text-align: center;
+}
 
+.cate-items {
+  border: 1px solid #fff;
 
+}
 
+.cate-item {
+  padding: 20px;
+  display: block;
+}
 
+.table {
+  
+}
+
+.table td {
+  color: #ffffff;
+  padding: 40px 0;
+}
+
+.table td a {
+  margin: 0 10px;
+}
 
 
 
