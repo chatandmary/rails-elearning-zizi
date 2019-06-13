@@ -5,8 +5,12 @@
         <ul class="list-inline">
           <% if logged_in? %>
             <li class="list-inline-item"><%= link_to "DASHBOARD", dashboard_path %></li>
+            <% if current_user.admin?%>
+            <li class="list-inline-item"><%= link_to "ADMIN", admin_categories_path %></li>
+            <li class="list-inline-item"><%= link_to "ADD CATEGORY", new_admin_category_path %></li>
+            <% end %>
             <li class="list-inline-item"><%= link_to "USERS", users_path %></li>
-            <li class="list-inline-item"><%= link_to "LESSONS", "#", id:"lessons" %></li>
+            <li class="list-inline-item"><%= link_to "LESSONS", categories_path, id:"lessons" %></li>
             <li class="list-inline-item"><%= link_to "PROFILE", current_user, id:"profile" %></li>
             <li class="list-inline-item"><%= link_to "SETTINGS", edit_user_path(current_user), id:"settings" %></li>
             <li class="list-inline-item"><%= link_to "LOGOUT", logout_path,method: :delete, data: { confirm: 'Are you sure?' },id:"logout" %></li>

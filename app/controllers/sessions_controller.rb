@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in(user)
       flash[:primary] = "Login Successfull!!"
-      redirect_to user
+      redirect_to dashboard_path
     else
       flash.now[:warning] = "Invalid Credentials"
       render "new"

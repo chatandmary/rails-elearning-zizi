@@ -1,0 +1,16 @@
+<h1 class="cate-h1">Categories</h1>
+
+<div class="row">
+  <% @categories.each do |category| %>
+    <div class="col-md-4">
+      <div class="cate-items text-center mt-4">
+        <a href="#" class="cate-item">
+          <div class="item-content">
+            <p class="cate-title"><%= category.title %></p>
+            <p class="cate-description"><%= category.description %></p>
+          </div>
+        </a>
+      </div>
+    </div> <!--col-->
+  <% end %>
+</div><!--row-->
