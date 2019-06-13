@@ -2,6 +2,9 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }, length: {maximum: 50}
   validates :password, presence: true, length: {minimum: 6}
+  validate  :picture_size
+
+  mount_uploader :picture, PictureUploader
 
   before_save { email.downcase! }
   has_secure_password
@@ -34,5 +37,14 @@ class User < ApplicationRecord
     # 現在のユーザーがフォローしてたらtrueを返す
     def following?(other_user)
       following.include?(other_user)
+    end
+
+    private
+
+    # アップロードされた画像のサイズをバリデーションする
+    def picture_size
+      if picture.size > 5.megabytes
+        errors.add(:picture, "should be less than 5MB")
+      end
     end
 end
