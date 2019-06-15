@@ -4,12 +4,12 @@
   <% @categories.each do |category| %>
     <div class="col-md-4">
       <div class="cate-items text-center mt-4">
-        <a href="#" class="cate-item">
+        <%= link_to lesson_path(category.id), class: "cate-item" do %>
           <div class="item-content">
             <p class="cate-title"><%= category.title %></p>
             <p class="cate-description"><%= category.description %></p>
           </div>
-        </a>
+        <% end %>
       </div>
     </div> <!--col-->
   <% end %>
