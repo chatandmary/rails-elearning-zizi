@@ -11,15 +11,15 @@
             <%= f.text_field :content, class: 'form-control' %>
         </div>
     </div>
-    <div class="col-md-6 col-12">
+    <div class="col-md-6 col-12 choice-col">
         <div class="form-group">
             <%= f.label :Choices %>
-            <%= f.fields_for [:admin,@category, @word ] do |f| %>
-              <%= f.text_field :content, class: 'form-control' %>
+            <%= f.fields_for :choice do |ff| %>
+              <%= ff.text_field :content, class: 'form-control mt-4' %>
             <% end %>
         </div>
         <div class="form-group">
-            <%= f.submit "SUBMIT", class: 'btn-block btn-color'%>
+            <%= f.submit "SUBMIT", class:'btn-block btn-color btn-custom'%>
         </div>
       <% end %>
     </div>
