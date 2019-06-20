@@ -23,6 +23,8 @@ class User < ApplicationRecord
   has_many :follower, through: :passive_relationships, source: :follower
   # =======================================================================================
 
+  has_many :lessons
+  has_many :categories, through: :lessons
 
     # ユーザーをフォローする
     def follow(other_user)

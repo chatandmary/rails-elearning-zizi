@@ -21,9 +21,13 @@ Rails.application.routes.draw do
       resources :words
     end
   end
+
+  resources :lessons do
+    resources :answers
+  end
+
   resources :users
   resources :relationships,only: [:create, :destroy]
   resources :categories
   resources :words
-  resources :lessons
 end

@@ -4,12 +4,15 @@
   <% @categories.each do |category| %>
     <div class="col-md-4">
       <div class="cate-items text-center mt-4">
-        <%= link_to lesson_path(category.id), class: "cate-item" do %>
           <div class="item-content">
             <p class="cate-title"><%= category.title %></p>
             <p class="cate-description"><%= category.description %></p>
+            <% if !lesson_result?(category) %>
+            <%= link_to 'Start lesson', lessons_path(user_id: current_user.id,category_id: category.id), {method: :push, class: "reg"}%>
+            <% else %>
+            <%= link_to "See result", lesson_url(lesson_id(category)), class: "reg" %>
+            <% end %>
           </div>
-        <% end %>
       </div>
     </div> <!--col-->
   <% end %>

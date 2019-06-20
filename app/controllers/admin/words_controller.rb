@@ -3,13 +3,13 @@ class Admin::WordsController < Admin::ApplicationController
 
   def new
     @category = Category.find(params[:category_id])
-    @word = @category.word.build
-    3.times { @word.choice.build }
+    @word = @category.words.build
+    3.times { @word.choices.build }
   end
 
   def create
     @category = Category.find(params[:category_id])
-    @word = @category.word.build(word_params)
+    @word = @category.words.build(word_params)
     if @word.save
       flash[:success] = "Created new word!!"
       redirect_to admin_categories_url
@@ -21,7 +21,7 @@ class Admin::WordsController < Admin::ApplicationController
   private 
       # strong parameters
       def word_params
-          params.require(:word).permit(:content, choice_attributes: [:id,:content,:correct])
+          params.require(:word).permit(:content, choices_attributes: [:word_id,:content,:correct])
       end
       
 

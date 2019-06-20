@@ -14,8 +14,9 @@
     <div class="col-md-6 col-12 choice-col">
         <div class="form-group">
             <%= f.label :Choices %>
-            <%= f.fields_for :choice do |ff| %>
+            <%= f.fields_for :choices do |ff| %>
               <%= ff.text_field :content, class: 'form-control mt-4' %>
+              <%= ff.check_box :correct,:as => :boolean, class: "form-control" %>
             <% end %>
         </div>
         <div class="form-group">
