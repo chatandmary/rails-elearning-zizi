@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_06_15_073640) do
   create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "category_id"
-    t.boolean "result"
+    t.boolean "result", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

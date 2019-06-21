@@ -3,7 +3,8 @@ class CreateLessons < ActiveRecord::Migration[5.2]
     create_table :lessons do |t|
       t.integer :user_id
       t.integer :category_id
-      t.boolean :result
+      t.boolean :result,:default => false
+      #Ex:- :default =>''
 
       t.timestamps
     end
