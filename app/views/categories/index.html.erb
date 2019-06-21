@@ -3,13 +3,16 @@
 <div class="row">
   <% @categories.each do |category| %>
     <div class="col-md-4">
-      <div class="cate-items text-center mt-4">
-        <a href="#" class="cate-item">
+      <div class="cate-items text-center mt-4 pb-4 pt-4">
           <div class="item-content">
             <p class="cate-title"><%= category.title %></p>
             <p class="cate-description"><%= category.description %></p>
+            <% if lesson_result(category).nil? %>
+            <%= link_to 'Start lesson', lessons_path(user_id: current_user.id,category_id: category.id), {method: :push, class: "reg2"}%>
+            <% else %>
+            <%= link_to "See result", lesson_path(lesson_id(category)), class: "reg3" %>
+            <% end %>
           </div>
-        </a>
       </div>
     </div> <!--col-->
   <% end %>

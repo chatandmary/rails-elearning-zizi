@@ -1,0 +1,22 @@
+<h1 class="cate-h1 mb-4">Answer</h1>
+
+<div class="row text-center">
+  <div class="col-md-12">
+    <div class="question mb-4">
+      <p class="q-title"><%= @word.content %></p>
+    </div>
+  </div><!-- col-->
+  <% @word.choices.each do |choice| %>
+  <div class="col-md-4">
+    <div class="q-anwer">
+      <%= link_to choice.content, lesson_answers_path(lesson_id: @lesson.id,word_id: @word.id, choice_id: choice.id), {method: :push, class: "reg"} %>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="col-md-12 mt-4 text-right">
+    <div class="answer-number mt-4">
+      <%= @lesson.words.count %>  of  <%= @category.words.count %>
+    </div>
+  </div>
+</div><!--row-->

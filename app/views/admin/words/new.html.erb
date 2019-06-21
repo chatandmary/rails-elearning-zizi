@@ -1,0 +1,28 @@
+<div class="text-center">
+    <h1 class="signup-title">
+        Add Word
+    </h1>
+</div>
+<%= form_for [:admin,@category, @word] do |f| %>
+<%= render 'shared/error_messages',object: f.object %>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+                <%= f.label :WORD %>
+                <%= f.text_field :content, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <%= f.label :Choices %>
+                    <%= f.fields_for :choices do |ff| %>
+                    <%= ff.text_field :content, class: 'form-control' %>
+                    <%= ff.check_box :correct,:as => :boolean, class: "form-control" %>
+                    <% end %>
+                </div>
+            <div class="form-group">
+                    <%= f.submit "SUBMIT", class:'btn-block btn-color mt-0'%>
+            </div>
+        </div>
+    </div>
+<% end %>

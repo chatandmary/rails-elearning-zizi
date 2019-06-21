@@ -97,6 +97,31 @@ header {
   margin-top: 20px;
 }
 
+.reg2 {
+  background-color: #DAB300;
+  padding: 30px 45px;
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.reg3 {
+  background-color: transparent;
+  padding: 30px 45px;
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 20px;
+  border: 1px solid #DAB300;
+  color: #DAB300;
+}
+
+.reg3:hover {
+  color: #DAB300;
+}
+
+
 .cannabis {
   width: 80%;
 }
@@ -333,10 +358,21 @@ label {
 }
 
 
+/*---------------------------------------------------------------
+	Word & Choice
+/*---------------------------------------------------------------*/
 
+.form-choice {
+  margin-bottom: 2rem;
+}
 
+.btn-custom {
+  padding: 20px 0;
+}
 
-
+.choice-col {
+  margin-top: 1.35rem;
+}
 
 
 
