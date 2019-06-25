@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @activities = @user.activities.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
   end
 
   def edit
@@ -49,6 +50,9 @@ class UsersController < ApplicationController
 
   def top
     @user = User.find_by(id:params[:id])
+    if logged_in?
+      @activities = current_user.feed.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+    end
   end
 
   def following

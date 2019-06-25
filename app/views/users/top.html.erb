@@ -6,23 +6,32 @@
       <%= link_to gravatar_for current_user %>
       <h2><%= current_user.name %></h2>
       <%= link_to "Learned 20 words", "#", class:"learned" %>
-      <%= link_to "Learned 25 words", "#", class:"learned" %>
+      <%= link_to "Learned 25 lessons", "#", class:"learned" %>
     </div>
   </div>
   <div class="col-md-12">
     <div class="activity border">
       <p class="ac-title">Activity</p>
-      <ul class="ac-list">
-        <li>
-        <%= gravatar_for current_user %>Kiki learned 20 of 20 words Basic 500
-        </li>
-        <li>
-        <%= gravatar_for current_user %>Kiki learned 20 of 20 words Basic 500
-        </li>
-        <li>
-        <%= gravatar_for current_user %>Kiki learned 20 of 20 words Basic 500
-        </li>
-      </ul>
+      <% if @activities.any? %>
+          <% @activities.each do |activity| %>
+          <ul class="ac-list">
+            <% if activity.action_type == "Lesson"%>
+            <li>
+            <%= gravatar_for activity.user %><%= link_to activity.user.name, activity.user %> learned <%= lesson_count(activity.action_id) %> of <%= category_words(activity.action_id) %> words <%= link_to category_title(activity.action_id), lesson_path(activity.action_id) %>
+            <small>Posted <%= time_ago_in_words activity.created_at %> ago</small>
+            </li>
+            <% else %>
+            <li>
+            <%= gravatar_for activity.user %><%= link_to activity.user.name, activity.user %> followed <%= link_to user_follow(activity.action_id).name, user_follow(activity.action_id) %>
+            <small>Posted <%= time_ago_in_words activity.created_at %> ago</small>
+            </li>
+            <% end %>
+          </ul>
+          <% end %>
+        <%= will_paginate @activities %>
+      <% else %>
+        <div class="text-center">Nothing to show</div>
+      <% end %>
     </div>
   </div>
 </div>
