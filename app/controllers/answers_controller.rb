@@ -4,8 +4,8 @@ class AnswersController < ApplicationController
     @category = Category.find(@lesson.category_id)
     @word = (@category.words - @lesson.words).first
     if @word.nil?
-      @lesson.result = true
-      @lesson.save
+      @lesson.update_attribute(:result,true)
+      @lesson.create_activity(user: current_user)
       redirect_to lesson_url(@lesson)
     end
   end

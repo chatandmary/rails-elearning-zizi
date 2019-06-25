@@ -25,6 +25,7 @@ class User < ApplicationRecord
 
   has_many :lessons
   has_many :categories, through: :lessons
+  has_many :activities
 
     # ユーザーをフォローする
     def follow(other_user)
@@ -39,6 +40,14 @@ class User < ApplicationRecord
     # 現在のユーザーがフォローしてたらtrueを返す
     def following?(other_user)
       following.include?(other_user)
+    end
+
+    #フィードデータを取り込む
+    def feed 
+      following_ids = "SELECT followed_id FROM relationships
+                      WHERE follower_id = :user_id"
+      Activity.where("user_id IN (#{following_ids}) 
+                      OR user_id = :user_id", user_id: id)
     end
 
     private
