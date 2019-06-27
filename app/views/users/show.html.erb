@@ -8,7 +8,11 @@
         <li class="li-count"><%= link_to "#{@user.follower.count} Follower",followers_user_path(@user) %></li>
       </ul>
       <%= render "follow_form" if logged_in? %>
-      <%= link_to "Learned 20 words", "#", class:"learned" %>
+      <% if @activities.any? %>
+      <small>Learned <%= link_to word_all(current_user.id),user_words_path(current_user.id), class:"learned" %> words</small>
+      <% else %>
+      <small>Learned 0 words</small>
+      <% end %>
     </div>
   </div>
   <div class="col-md-8">
@@ -20,12 +24,12 @@
             <% if activity.action_type == "Lesson"%>
             <li>
             <%= gravatar_for activity.user %><%= link_to activity.user.name, activity.user %> learned <%= lesson_count(activity.action_id) %> of <%= category_words(activity.action_id) %> words <%= link_to category_title(activity.action_id), lesson_path(activity.action_id) %>
-            <small>Posted <%= time_ago_in_words activity.created_at %> ago</small>
+             | <small>Posted <%= time_ago_in_words activity.created_at %> ago</small>
             </li>
             <% else %>
             <li>
             <%= gravatar_for activity.user %><%= link_to activity.user.name, activity.user %> followed <%= link_to user_follow(activity.action_id).name, user_follow(activity.action_id) %>
-            <small>Posted <%= time_ago_in_words activity.created_at %> ago</small>
+             | <small>Posted <%= time_ago_in_words activity.created_at %> ago</small>
             </li>
             <% end %>
           </ul>

@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="user-info text-center">
+      <%= link_to gravatar_for current_user %>
+      <h2 class="border-bottom"><%= current_user.name %></h2>
+      <% if @lessons.any? %>
+      <small>Learned <%= link_to word_all(current_user.id),user_words_path(current_user.id), class:"learned" %> words</small>
+      <% else %>
+      <small>Learned 0 words</small>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-8 result-center">
+    <div class="activity border">
+      <p class="ac-title">Words learned</p>
+        <table class="table table-bordered table-hover">
+          <% if @lessons.any? %>
+            <thead class="thead-light">
+            <tr>
+              <th scope="col">Words</th>
+              <th scope="col">Answers</th>
+              <th scope="col">Correct Answers</th>
+              <th scope="col">Correct</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @lessons.each do |lesson| %>
+            <% lesson.words.each do |word| %>
+              <tr>
+              <td><%= word.content %></td>
+              <td><%= correct_answer(lesson.id, word.id).content %></td>
+              <td><%= word.choices.find_by(correct: true).content %></td>
+              <td><%= correct_answer(lesson.id, word.id).correct ? '○': '×' %></td>
+              </tr>
+            <% end %>
+            <% end %>
+          <% else %>
+            <div class="text-center">Nothing to show</div>
+          <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+
+

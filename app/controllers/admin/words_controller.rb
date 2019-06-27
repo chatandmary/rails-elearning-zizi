@@ -18,10 +18,37 @@ class Admin::WordsController < Admin::ApplicationController
     end
   end
 
+  def index
+    @category = Category.find(params[:category_id])
+    @words = @category.words.paginate(page:params[:page], per_page: 5)
+  end
+
+  def edit
+    @category = Category.find_by(id: params[:category_id])
+    @word = Word.find_by(id:params[:id])
+  end
+
+  def update
+    @category = Category.find_by(id: params[:category_id])
+    @word = @category.words.find(params[:id])
+    if @word.update(word_params)
+        flash[:success] = "Updated new word!!"
+        redirect_to admin_category_words_url
+      else
+        render "edit"
+      end
+  end
+
+  def destroy
+    Word.find(params[:id]).destroy
+    flash[:success] = "Deleated new word!!"
+    redirect_to admin_category_words_url
+  end
+
   private 
       # strong parameters
       def word_params
-          params.require(:word).permit(:content, choices_attributes: [:word_id,:content,:correct])
+          params.require(:word).permit(:content,:category_id, choices_attributes: [:id,:content,:correct])
       end
       
 

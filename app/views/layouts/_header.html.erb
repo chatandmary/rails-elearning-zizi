@@ -1,6 +1,10 @@
 <header>
   <div class="hl container header-title">
-    <%= link_to("Cannabis", root_path , class:"eden")%>
+    <% if logged_in? %>
+      <%= link_to("Cannabis", dashboard_path , class:"eden") %>
+    <% else %>
+      <%= link_to("Cannabis", root_path , class:"eden") %>
+    <% end %>
       <nav class="hr">
         <ul class="list-inline">
           <% if logged_in? %>

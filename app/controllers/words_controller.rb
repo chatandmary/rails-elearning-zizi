@@ -1,4 +1,9 @@
 class WordsController < ApplicationController
-  def show
+  def index
+    @user = User.find_by(id: params[:id])
+    @lessons = Lesson.where(user_id: params[:user_id])
+    # @category = Category.find_by(id: params[:category_id])
+
+    # @words = @category.words
   end
 end

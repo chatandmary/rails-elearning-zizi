@@ -8,6 +8,11 @@ module UsersHelper
     image_tag gravatar_url, alt: user.name
   end
 
+  def word_all(id)
+    activity =Activity.where(action_type: "Lesson")
+    activity.count
+  end
+
   def lesson_count(id)
     lesson = Lesson.find(id)
     lesson.choices.where(correct: true).count
