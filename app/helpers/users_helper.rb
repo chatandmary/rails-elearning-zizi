@@ -9,8 +9,7 @@ module UsersHelper
   end
 
   def word_all(id)
-    activity =Activity.where(action_type: "Lesson")
-    activity.count
+    answer = current_user.answers.count
   end
 
   def lesson_count(id)
@@ -33,6 +32,11 @@ module UsersHelper
   def user_follow(id)
     relationship = Relationship.find(id)
     user = User.find(relationship.followed_id)
+  end
+
+  def user_follower(id)
+    relationship = Relationship.find(id)
+    user = User.find(relationship.follower_id)
   end
   
 

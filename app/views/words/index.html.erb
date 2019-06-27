@@ -1,10 +1,14 @@
 <div class="row">
   <div class="col-md-4">
     <div class="user-info text-center">
-      <%= link_to gravatar_for current_user %>
-      <h2 class="border-bottom"><%= current_user.name %></h2>
+      <% if @user.picture? %>
+        <%= image_tag @user.picture.url %>
+      <% else %>
+        <%= link_to gravatar_for @user %>
+      <% end %>
+      <h2 class="border-bottom"><%= @user.name %></h2>
       <% if @lessons.any? %>
-      <small>Learned <%= link_to word_all(current_user.id),user_words_path(current_user.id), class:"learned" %> words</small>
+      <small>Learned <%= link_to @user.answers.count(@user.id),user_words_path(@user.id), class:"learned" %> words</small>
       <% else %>
       <small>Learned 0 words</small>
       <% end %>
