@@ -9,7 +9,7 @@
   <% @word.choices.each do |choice| %>
   <div class="col-md-4">
     <div class="q-anwer">
-      <%= link_to choice.content, lesson_answers_path(lesson_id: @lesson.id,word_id: @word.id, choice_id: choice.id), {method: :push, class: "reg"} %>
+      <%= link_to choice.content, lesson_answers_path(lesson_id: @lesson.id,word_id: @word.id, choice_id: choice.id), {method: :push, class: "reg4"} %>
     </div>
   </div>
   <% end %>

@@ -140,6 +140,41 @@ header {
   color: #DAB300;
 }
 
+.reg4 {
+  background-color: #DAB300;
+  padding: 30px 45px;
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.reg5 {
+  background-color: #DAB300;
+  padding: 30px 45px;
+  border-radius: 15px;
+  display: block;
+  font-size: 1rem;
+  margin-top: 40px;
+}
+
+.reg6 {
+  background-color:#fff;
+  padding: 30px 45px;
+  border-radius: 15px;
+  display: block;
+  font-size: 1rem;
+  margin-top: 20px;
+  color: #1a1a1a;
+}
+
+.reg6:hover {
+  color: #1a1a1a;
+}
+
+.q-title {
+  font-size: 3rem;
+}
 
 .cannabis {
   width: 80%;
@@ -775,6 +810,26 @@ label {
 
 .bgt {
   background-color: transparent!important;
+}
+
+.q-title {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.reg4 {
+  display: block;
+  font-size: 1rem;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #DAB300;
+  padding: 30px 45px;
+  border-radius: 15px;
+}
+
+.answer-number {
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 }
