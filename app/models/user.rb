@@ -26,6 +26,7 @@ class User < ApplicationRecord
   has_many :lessons
   has_many :categories, through: :lessons
   has_many :activities
+  has_many :answers, through: :lessons
 
     # ユーザーをフォローする
     def follow(other_user)

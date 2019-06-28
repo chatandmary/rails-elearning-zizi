@@ -1,0 +1,25 @@
+<h1 class="cate-h1 mb-4">Words index</h1>
+
+<table class="table table-bordered table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Words</th>
+      <th scope="col">Answer</th>
+      <th scope="col">Settings</th>
+    </tr>
+  </thead>
+  <% @words.each do |word| %>
+  <tbody>
+    <tr>
+      <td><%= link_to word.content, "#" %></td>
+      <td><%= word.choices.find_by(correct: true).content %></td>
+      <td><%= link_to "Edit", edit_admin_category_word_path(@category.id, word.id) %>|<%= link_to "Delete", admin_category_word_path(@category.id, word.id) , method: :delete, data: { confirm: "Are you sure?"}%></td>
+    </tr>
+  </tbody>
+<% end %>
+</table>
+
+
+<div class="pagi">
+<%= will_paginate %>
+</div>

@@ -1,26 +1,68 @@
 <header>
-  <div class="hl container header-title">
-    <%= link_to("Cannabis", root_path , class:"eden")%>
-      <nav class="hr">
-        <ul class="list-inline">
+<div class="hl container header-title">
+  <nav class="navbar navbar-expand-sm">
+  <% if logged_in? %>
+    <%= link_to("Cannabis", dashboard_path , class:"eden") %>
+  <% else %>
+    <%= link_to("Cannabis", root_path , class:"eden") %>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="modal" data-target="#menuModal" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="modal fade fullscreen" id="menuModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       <h5 class="modal-title">Cannabis</h5>
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <span aria-hidden="true">×</span>
+       </button>
+      </div>
+      <div class="modal-body">
+        <ul style="list-style-type:none;">
           <% if logged_in? %>
-            <li class="list-inline-item"><%= link_to "DASHBOARD", dashboard_path %></li>
+            <li class="nav-item"><%= link_to "DASHBOARD", dashboard_path,class:"nav-link" %></li>
             <% if current_user.admin?%>
-            <li class="list-inline-item"><%= link_to "ADMIN", admin_categories_path %></li>
-            <li class="list-inline-item"><%= link_to "ADD CATEGORY", new_admin_category_path %></li>
+            <li class="nav-item"><%= link_to "ADMIN", admin_categories_path,class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "ADD CATEGORY", new_admin_category_path,class:"nav-link" %></li>
             <% end %>
-            <li class="list-inline-item"><%= link_to "USERS", users_path %></li>
-            <li class="list-inline-item"><%= link_to "LESSONS", categories_path, id:"lessons" %></li>
-            <li class="list-inline-item"><%= link_to "PROFILE", current_user, id:"profile" %></li>
-            <li class="list-inline-item"><%= link_to "SETTINGS", edit_user_path(current_user), id:"settings" %></li>
-            <li class="list-inline-item"><%= link_to "LOGOUT", logout_path,method: :delete, data: { confirm: 'Are you sure?' },id:"logout" %></li>
+            <li class="nav-item"><%= link_to "USERS", users_path,class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "LESSONS", categories_path, id:"lessons",class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "PROFILE", current_user, id:"profile",class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "SETTINGS", edit_user_path(current_user), id:"settings",class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "LOGOUT", logout_path,method: :delete, data: { confirm: 'Are you sure?' },id:"logout",class:"nav-link" %></li>
+            <%= link_to image_tag("cannabis.png", alt: "Cannabis_logo",class:"cannabis2"),about_path,class:"bgt" %>
             <% else %>
-            <li class="list-inline-item"><%= link_to "ABOUT", about_path, id:"about" %></li>
-            <li class="list-inline-item"><%= link_to "SIGNUP", signup_path, id:"signup" %></li>
-            <li class="list-inline-item"><%= link_to "LOGIN", login_path, id:"login" %></li>
+            <li class="nav-item"><%= link_to "ABOUT", about_path, id:"about",class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "SIGNUP", signup_path, id:"signup",class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "LOGIN", login_path, id:"login",class:"nav-link" %></li>
+          <% end %>
+
+        </ul>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.fullscreen -->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+          <% if logged_in? %>
+            <li class="nav-item"><%= link_to "DASHBOARD", dashboard_path,class:"nav-link" %></li>
+            <% if current_user.admin?%>
+            <li class="nav-item"><%= link_to "ADMIN", admin_categories_path,class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "ADD CATEGORY", new_admin_category_path,class:"nav-link" %></li>
+            <% end %>
+            <li class="nav-item"><%= link_to "USERS", users_path,class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "LESSONS", categories_path, id:"lessons",class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "PROFILE", current_user, id:"profile",class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "SETTINGS", edit_user_path(current_user), id:"settings",class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "LOGOUT", logout_path,method: :delete, data: { confirm: 'Are you sure?' },id:"logout",class:"nav-link" %></li>
+            <% else %>
+            <li class="nav-item"><%= link_to "ABOUT", about_path, id:"about",class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "SIGNUP", signup_path, id:"signup",class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "LOGIN", login_path, id:"login",class:"nav-link" %></li>
           <% end %>
         </ul>
-      </nav>
-        <div class="clear"></div>
   </div>
+</nav>
+</div>
 </header>

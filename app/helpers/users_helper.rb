@@ -8,6 +8,10 @@ module UsersHelper
     image_tag gravatar_url, alt: user.name
   end
 
+  def word_all(id)
+    answer = current_user.answers.count
+  end
+
   def lesson_count(id)
     lesson = Lesson.find(id)
     lesson.choices.where(correct: true).count
@@ -28,6 +32,11 @@ module UsersHelper
   def user_follow(id)
     relationship = Relationship.find(id)
     user = User.find(relationship.followed_id)
+  end
+
+  def user_follower(id)
+    relationship = Relationship.find(id)
+    user = User.find(relationship.follower_id)
   end
   
 

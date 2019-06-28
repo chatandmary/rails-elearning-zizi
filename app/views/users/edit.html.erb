@@ -7,10 +7,14 @@
       </div>
       <%= form_for @user do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-
-        <div class="gravatar_edit text-center mb-3">
-          <%= gravatar_for @user %>
-          <a href="http://gravatar.com/emails" target="_blank" class="change">change</a>
+        <div class="form-group picture_center">
+          <% if @user.picture? %>
+          <%= image_tag @user.picture.url %>
+          <% else %>
+          <%= link_to gravatar_for @user %>
+          <% end %>
+          <%= f.label "change picture" %>
+          <%= f.file_field :picture %>
         </div>
 
         <div class="form-group">

@@ -10,6 +10,7 @@ class Word < ApplicationRecord
 
   validate :check_box
 
+ 
   private
 
   def check_box
