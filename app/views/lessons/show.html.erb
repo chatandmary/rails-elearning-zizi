@@ -5,26 +5,26 @@
     <div class="question mb-4">
       <p class="q-title"><%= @lesson.category.title %></p>
     </div>
-  </div><!-- col-->
 
-  <table class="table table-bordered table-hover">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">Correct</th>
-      <th scope="col">Word</th>
-      <th scope="col">Your Answer</th>
-    </tr>
-  </thead>
-  <% @lesson.answers.each do |answer| %>
-    <tbody>
+    <table class="table table-bordered table-hover">
+    <thead class="thead-light">
       <tr>
-        <td><%= answer.choice.correct ? '○': '×' %></td>
-        <td><%= answer.word.content %></td>
-        <td><%= answer.choice.content %></td>
+        <th scope="col">Correct</th>
+        <th scope="col">Word</th>
+        <th scope="col">Your Answer</th>
       </tr>
-    </tbody>
-  <% end %>
-</table>
+    </thead>
+    <% @lesson.answers.each do |answer| %>
+      <tbody>
+        <tr>
+          <td><%= answer.choice.correct ? '○': '×' %></td>
+          <td><%= answer.word.content %></td>
+          <td><%= answer.choice.content %></td>
+        </tr>
+      </tbody>
+    <% end %>
+    </table>
+  </div><!-- col-->
 
   <div class="col-md-12 mt-4 text-center">
     <div class="answer-number mt-4">
